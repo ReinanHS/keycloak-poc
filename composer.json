@@ -1,0 +1,15 @@
+{
+    "name": "root/application",
+    "require": {
+        "slim/slim": "^4.11",
+        "slim/http": "^1.3",
+        "slim/psr7": "^1.6",
+        "php": "^8.2"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Application\\": "src/"
+        }
+    }
+}
