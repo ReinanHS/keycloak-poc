@@ -12,6 +12,7 @@ return [
             'clientId' => getenv('CLIENT_ID'),
             'clientSecret' => getenv('CLIENT_SECRET'),
             'redirectUri' => getenv('REDIRECT_URI'),
+            'version' => '21.0.2',
         ]);
     },
 ];

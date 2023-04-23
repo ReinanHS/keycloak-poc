@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use Application\Controller\AuthCallbackController;
 use Application\Controller\AuthController;
 use Application\Controller\HomeController;
 use Application\Controller\UserController;
@@ -10,6 +11,9 @@ use DI\Container;
 use Slim\Factory\AppFactory;
 
 require __DIR__ . '/../vendor/autoload.php';
+
+// Session
+session_start();
 
 // Load dependencies
 $dependencies = require __DIR__ . '/../config/dependencies.php';
@@ -29,6 +33,7 @@ $app->addErrorMiddleware(true, true, true);
 // Add routes
 $app->get('/', HomeController::class);
 $app->get('/auth', AuthController::class);
+$app->get('/callback-url', AuthCallbackController::class);
 $app->get('/user', UserController::class)->add(AuthMiddleware::class);
 
 $app->run();
